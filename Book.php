@@ -47,18 +47,3 @@ class Book
     }
 
 }
-
-// instantiate
-$harry_potter = new Book(8844775566443, "Harry potter and the goblet of fire", "Ryan Dhungel", 5);
-//$harry_potter->isbn = 8844775566443;
-//$harry_potter->title = "Harry potter and the goblet of fire";
-//$harry_potter->author = "Ryan Dhungel";
-//$harry_potter->available = 0;
-
-if ($harry_potter->getCopy()) {
-    echo 'Here is your copy of ' . $harry_potter->title . '<br>';
-} else {
-    echo 'Sorry its gone <br>';
-}
-
-echo $harry_potter;
