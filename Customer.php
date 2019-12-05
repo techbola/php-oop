@@ -17,4 +17,35 @@ class Customer
         $this->email = $email;
     }
 
+    // we use encapsulation to access private properties using setters and getters (accessors and mutators)
+    public function getFirstName()
+    {
+        return $this->firstname;
+    }
+
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    public function getFullName()
+    {
+        return $this->surname . ' ' . $this->firstname;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setFirstName(String $value)
+    {
+        $this->firstname = $value;
+    }
+
+    public function setEmail(String $email)
+    {
+        $this->email = $email;
+    }
+
 }

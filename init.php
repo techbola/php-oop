@@ -13,5 +13,6 @@ $harry_potter = new Book(8844775566443, "Harry potter and the goblet of fire", "
 
 $first_customer = new Customer(1, "Ryan", "Dhungel", "ryan@gmail.com");
 
-//var_dump($first_customer->firstname);
-var_dump($harry_potter->title);
+var_dump($first_customer->setEmail('bola@gmail.com'));
+var_dump($first_customer->getEmail());
+//var_dump($harry_potter->title);
