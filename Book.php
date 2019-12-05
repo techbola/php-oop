@@ -11,12 +11,21 @@ class Book
     public $available;
 
     // magic method construct
-    public function __construct($isbn, $title, $author, $available)
+    public function __construct(int $isbn, String $title, String $author, int $available)
     {
         $this->isbn = $isbn;
         $this->title = $title;
         $this->author = $author;
         $this->available = $available;
+    }
+
+    public function __toString()
+    {
+        $result = $this->title . ' by ' . $this->author;
+        if (!$this->available) {
+            $result .= 'Not Available';
+        }
+        return $result;
     }
 
     // methods are function
@@ -52,4 +61,4 @@ if ($harry_potter->getCopy()) {
     echo 'Sorry its gone <br>';
 }
 
-var_dump($harry_potter);
+echo $harry_potter;
