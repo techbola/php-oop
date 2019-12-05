@@ -10,6 +10,15 @@ class Book
     public $author;
     public $available;
 
+    // magic method construct
+    public function __construct($isbn, $title, $author, $available)
+    {
+        $this->isbn = $isbn;
+        $this->title = $title;
+        $this->author = $author;
+        $this->available = $available;
+    }
+
     // methods are function
     public function getPrintableTitle(){
         $result = $this->title . ' by ' . $this->author;
@@ -31,11 +40,11 @@ class Book
 }
 
 // instantiate
-$harry_potter = new Book();
-$harry_potter->isbn = 8844775566443;
-$harry_potter->title = "Harry potter and the goblet of fire";
-$harry_potter->author = "Ryan Dhungel";
-$harry_potter->available = 0;
+$harry_potter = new Book(8844775566443, "Harry potter and the goblet of fire", "Ryan Dhungel", 5);
+//$harry_potter->isbn = 8844775566443;
+//$harry_potter->title = "Harry potter and the goblet of fire";
+//$harry_potter->author = "Ryan Dhungel";
+//$harry_potter->available = 0;
 
 if ($harry_potter->getCopy()) {
     echo 'Here is your copy of ' . $harry_potter->title . '<br>';
