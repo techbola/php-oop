@@ -1,5 +1,6 @@
 <?php
 
+namespace Bookstore\Domain;
 
 class Customer
 {
