@@ -2,21 +2,30 @@
 
 namespace Bookstore\Domain;
 
-class Customer
+abstract class Customer extends Person
 {
 
     private $id;
-    private $firstname;
-    private $surname;
+//    private $firstname;
+//    private $surname;
     private $email;
 
     public function __construct($id, $firstname, $surname, $email)
     {
+        parent::__construct($firstname, $surname);
+
         $this->id = $id;
-        $this->firstname = $firstname;
-        $this->surname = $surname;
+//        $this->firstname = $firstname;
+//        $this->surname = $surname;
         $this->email = $email;
     }
+
+    //    abstract methods
+//    Abstract classes forces the children to implement its abstract methods
+//Abstract class cannot be instantiated
+    abstract public function getMonthlyFee();
+    abstract public function getAmountToBorrow();
+    abstract public function getType();
 
     // we use encapsulation to access private properties using setters and getters (accessors and mutators)
     public function getFirstName()
@@ -47,6 +56,11 @@ class Customer
     public function setEmail(String $email)
     {
         $this->email = $email;
+    }
+
+    public function sayHi()
+    {
+        return "Yoho " . $this->firstname . ' ' . parent::sayHi();
     }
 
 }
